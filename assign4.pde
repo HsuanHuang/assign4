@@ -117,12 +117,11 @@ void keyPressed() {
 /*---------Make Alien Function-------------*/
 void alienMaker( int numAlien , int colAlien ) {
   for ( int i = 0 ; i < numAlien -1 ; i++ ){
-    int col = i % colAlien; 
-    int row = i / colAlien;
-    aList[ i ] = new Alien ( 50 + col*40 , 50 + row*50 );
+    float col = i % colAlien; 
+    float row = i / colAlien;
+    aList[ i ] = new Alien ( 50 + int(col)*40 , 50 + int(row)*50 );
   }
 } 
-  
 
 
 void drawLife() {
