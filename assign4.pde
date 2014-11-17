@@ -189,6 +189,7 @@ void checkAlienBut(){
 }
 
 /*---------Ship Shoot-------------*/
+
 void shootBullet(int frame) {
   if ( key == ' ' && countBulletFrame>frame) {
     if (!ship.upGrade) {
@@ -200,10 +201,15 @@ void shootBullet(int frame) {
       }
     } 
     /*---------Ship Upgrade Shoot-------------*/
-    else {
-      bList[bulletNum]= new Bullet(ship.posX, ship.posY, -3, 0); 
-      if (bulletNum<bList.length-2) {
-        bulletNum+=1;
+    else if( ship.upGrade = true ){
+
+      bList[bulletNum]= new Bullet(ship.posX, ship.posY, -3, 0);  
+      bList[bulletNum+1]= new Bullet(ship.posX, ship.posY, -3, 1);
+      bList[bulletNum+2]= new Bullet(ship.posX, ship.posY, -3,-1);
+      
+      
+      if (bulletNum<bList.length-4) {
+        bulletNum += 3;
       } else {
         bulletNum = 0;
       }
@@ -346,7 +352,7 @@ void printText(){
       textSize(40);
       text("WINNER", 320, 300);
       textSize(20);
-      text("SCORE:"+ point ,320,240 + 40);//add the score
+      text("SCORE:"+ point ,320,300 + 40);//add the score
       
     }
     
