@@ -173,19 +173,18 @@ void drawAlien() {
       alien.move();    //Move Alien
       alien.display(); //Draw Alien
       /*---------Call Check Line Hit---------*/
-      checkAlienBut();
+      checkAlienBut(i);
       /*--------------------------------------*/
     }
   }
 }
 
 /*--------Check Line Hit---------*/
-void checkAlienBut(){
-  for ( int i = 0 ; i < numAlien ; i++){
+void checkAlienBut(int i){
     if( aList[i].aY + aList[i].aSize  >=  420 && aList[i].aY <= height){
       status = GAME_LOSE;    
     }
-  }
+  
 }
 
 /*---------Ship Shoot-------------*/
