@@ -226,8 +226,8 @@ void checkAlienDead() {
       if (bullet != null && alien != null && !bullet.gone && !alien.die){
         // Check Array isn't empty and bullet / alien still exist
       /*------------Hit detect-------------*/         
-         if( abs(bList[i].bX - aList[j].aX) <= aList[j].aSize && 
-             abs(bList[i].bY - aList[j].aY) <= aList[j].aSize){  
+         if( abs(bList[i].bX - aList[j].aX) <= aList[j].aSize + bList[i].bSize && 
+             abs(bList[i].bY - aList[j].aY) <= aList[j].aSize + bList[i].bSize){  
                aList[j].die = true;      
                removeBullet( bList[i] );
                removeAlien( aList[j] );
@@ -261,8 +261,8 @@ void checkShipHit() {
     Laser laser = lList[i];
     if (laser!= null && !laser.gone ){// Check Array isn't empty and laser still exist
     /*------------Hit detect-------------*/    
-      if( abs(lList[i].lX-ship.posX) <= ship.shipSize &&
-          abs(lList[i].lY-ship.posY) <= ship.shipSize ){
+      if( abs(lList[i].lX-ship.posX) <= ship.shipSize + lList[i].lSize &&
+          abs(lList[i].lY-ship.posY) <= ship.shipSize + lList[i].lSize){
             
             removeLaser( lList[i] );
             life --;
