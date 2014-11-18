@@ -28,7 +28,7 @@ void setup() {
 
   status = GAME_START;
 
-  bList = new Bullet[30];
+  bList = new Bullet[31];
   lList = new Laser[30];
   aList = new Alien[100];
 
